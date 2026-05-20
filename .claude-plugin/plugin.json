@@ -1,0 +1,10 @@
+{
+  "name": "sansui-skills",
+  "version": "0.1.0",
+  "description": "Sansui's personal Claude Code skills collection",
+  "author": {
+    "name": "sansui",
+    "url": "https://github.com/sansui"
+  },
+  "skills": "./skills"
+}
