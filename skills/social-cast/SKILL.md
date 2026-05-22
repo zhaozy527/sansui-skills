@@ -23,7 +23,9 @@ version: "1.0.0"
 
 ## 水印
 
-所有卡片底部固定水印：**zzy** + 当天日期（格式：YYYY.MM.DD）。
+所有卡片底部固定水印：**用户名** + 当天日期（格式：YYYY.MM.DD）。
+
+用户名默认取系统用户名，用户也可在配置中自定义。
 
 ## 执行步骤
 
@@ -116,11 +118,11 @@ node assets/capture.js <html_path> <output_path> 1080 <height> fullpage
 - 短句卡片（-s）：固定 1080 x 1440，不用 fullpage
 - 问答卡片（-q）：使用 `fullpage` 参数，高度自动撑开
 
-**从 skill 根目录运行**：`cd ~/.claude/skills/social-cast && node assets/capture.js ...`
+**从 skill 根目录运行**：`cd <skill根目录> && node assets/capture.js ...`
 
 ### 步骤 6：交付
 
-1. 输出文件保存到 `~/Downloads/` 目录
+1. 输出文件保存到当前工作目录或用户指定目录
 2. 文件命名：`{name}_{YYYYMMDD}.png`，name 从内容核心提取（中文直接用，去标点，≤ 15 字符）
 3. 报告文件路径，用户可以直接找到并发送
 
