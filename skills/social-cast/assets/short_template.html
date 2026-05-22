@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+
+  :root {
+    --bg: {{BG_COLOR}};
+    --text: #2A2A2E;
+    --text-mid: #5A5A60;
+    --text-dim: #9A9AA0;
+    --accent: {{ACCENT_COLOR}};
+    --rule: #E0E0E5;
+    --serif: 'Noto Serif SC', 'Songti SC', 'STSong', serif;
+    --sans: 'Noto Sans SC', 'PingFang SC', system-ui, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    width: 1080px;
+    height: 1440px;
+    background: var(--bg);
+    overflow: hidden;
+  }
+
+  .card {
+    width: 1080px;
+    height: 1440px;
+    background: var(--bg);
+    padding: 120px 96px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+
+  /* Decorative accent bar top-left */
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 80px;
+    left: 80px;
+    width: 48px;
+    height: 3px;
+    background: var(--accent);
+  }
+
+  .main-text {
+    font: 700 72px/1.35 var(--serif);
+    color: var(--text);
+    letter-spacing: -0.01em;
+    margin-bottom: 40px;
+  }
+
+  .main-text .accent {
+    color: var(--accent);
+  }
+
+  .sub-text {
+    font: 300 36px/1.7 var(--sans);
+    color: var(--text-mid);
+    margin-bottom: 0;
+  }
+
+  /* ── Watermark Footer ── */
+  .watermark {
+    position: absolute;
+    bottom: 80px;
+    left: 96px;
+    right: 96px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .watermark .brand {
+    font: 500 28px/1 var(--sans);
+    color: var(--text-dim);
+    letter-spacing: 0.08em;
+  }
+
+  .watermark .date {
+    font: 400 24px/1 var(--sans);
+    color: var(--text-dim);
+    letter-spacing: 0.04em;
+  }
+
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="main-text">{{MAIN_TEXT}}</div>
+    <div class="sub-text">{{SUB_TEXT}}</div>
+    <div class="watermark">
+      <span class="brand">zzy</span>
+      <span class="date">{{DATE_STR}}</span>
+    </div>
+  </div>
+</body>
+</html>

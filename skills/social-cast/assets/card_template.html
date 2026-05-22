@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+
+  :root {
+    --bg: {{BG_COLOR}};
+    --text: #2A2A2E;
+    --text-mid: #5A5A60;
+    --text-dim: #9A9AA0;
+    --accent: {{ACCENT_COLOR}};
+    --rule: #E0E0E5;
+    --serif: 'Noto Serif SC', 'Songti SC', 'STSong', serif;
+    --sans: 'Noto Sans SC', 'PingFang SC', system-ui, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    width: 1080px;
+    background: var(--bg);
+  }
+
+  .card {
+    width: 1080px;
+    background: var(--bg);
+    padding: 80px 80px 48px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  /* ── Header ── */
+  .header {
+    margin-bottom: 56px;
+    position: relative;
+  }
+
+  .header h1 {
+    font: 700 72px/1.2 var(--serif);
+    color: var(--text);
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+
+  .header::after {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 3px;
+    background: var(--accent);
+    margin-top: 8px;
+  }
+
+  /* ── Content ── */
+  .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content p {
+    font: 400 36px/1.8 var(--sans);
+    color: var(--text);
+    margin-bottom: 28px;
+  }
+
+  .content .highlight {
+    font: 500 38px/1.65 var(--serif);
+    color: var(--text);
+    padding: 16px 0 16px 28px;
+    border-left: 3px solid var(--accent);
+    margin: 36px 0;
+  }
+
+  .content h2 {
+    font: 600 44px/1.35 var(--serif);
+    color: var(--text);
+    margin: 48px 0 24px;
+    letter-spacing: -0.02em;
+  }
+
+  .content h2:first-child {
+    margin-top: 0;
+  }
+
+  .content h3 {
+    font: 500 38px/1.4 var(--sans);
+    color: var(--text);
+    margin: 36px 0 16px;
+  }
+
+  .content blockquote {
+    margin: 0 0 28px;
+    padding-left: 28px;
+    border-left: 3px solid var(--rule);
+  }
+
+  .content blockquote p {
+    font: 300 34px/1.75 var(--serif);
+    color: var(--text-mid);
+    margin-bottom: 8px;
+  }
+
+  .content strong {
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .content .divider {
+    height: 1px;
+    background: var(--rule);
+    margin: 40px 0;
+  }
+
+  .content ul {
+    list-style: none;
+    margin-bottom: 28px;
+  }
+
+  .content ul li {
+    font: 400 36px/1.8 var(--sans);
+    color: var(--text);
+    padding: 6px 0 6px 32px;
+    position: relative;
+  }
+
+  .content ul li::before {
+    content: '·';
+    position: absolute;
+    left: 4px;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  .content ol {
+    list-style: none;
+    margin-bottom: 28px;
+    counter-reset: item;
+  }
+
+  .content ol li {
+    font: 400 36px/1.8 var(--sans);
+    color: var(--text);
+    padding: 6px 0 6px 48px;
+    position: relative;
+    counter-increment: item;
+  }
+
+  .content ol li::before {
+    content: counter(item);
+    position: absolute;
+    left: 0;
+    font: 600 32px/1 var(--sans);
+    color: var(--accent);
+  }
+
+  .content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 28px 0;
+  }
+
+  .content table th {
+    font: 500 32px/1.5 var(--sans);
+    color: var(--text);
+    text-align: left;
+    padding: 14px 16px;
+    border-bottom: 2px solid var(--accent);
+  }
+
+  .content table td {
+    font: 400 30px/1.6 var(--sans);
+    color: var(--text-mid);
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .content table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .content .tag {
+    display: inline-block;
+    font: 400 24px/1 var(--sans);
+    color: var(--accent);
+    background: rgba(0,0,0,0.04);
+    padding: 6px 14px;
+    border-radius: 4px;
+    margin: 0 8px 8px 0;
+  }
+
+  /* ── Watermark Footer ── */
+  .watermark {
+    flex-shrink: 0;
+    margin-top: 64px;
+    padding-top: 28px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .watermark .brand {
+    font: 500 28px/1 var(--sans);
+    color: var(--text-dim);
+    letter-spacing: 0.08em;
+  }
+
+  .watermark .date {
+    font: 400 24px/1 var(--sans);
+    color: var(--text-dim);
+    letter-spacing: 0.04em;
+  }
+
+</style>
+</head>
+<body>
+  <div class="card">
+    {{HEADER}}
+    <div class="content">
+      {{BODY_HTML}}
+    </div>
+    <div class="watermark">
+      <span class="brand">zzy</span>
+      <span class="date">{{DATE_STR}}</span>
+    </div>
+  </div>
+</body>
+</html>

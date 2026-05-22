@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+
+  :root {
+    --bg: {{BG_COLOR}};
+    --text: #2A2A2E;
+    --text-mid: #5A5A60;
+    --text-dim: #9A9AA0;
+    --accent: {{ACCENT_COLOR}};
+    --rule: #E0E0E5;
+    --serif: 'Noto Serif SC', 'Songti SC', 'STSong', serif;
+    --sans: 'Noto Sans SC', 'PingFang SC', system-ui, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    width: 1080px;
+    background: var(--bg);
+  }
+
+  .card {
+    width: 1080px;
+    background: var(--bg);
+    padding: 80px 80px 48px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  /* ── Question ── */
+  .question-area {
+    margin-bottom: 48px;
+  }
+
+  .question-area .q-label {
+    font: 500 24px/1 var(--sans);
+    color: var(--accent);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .question-area h1 {
+    font: 700 64px/1.25 var(--serif);
+    color: var(--text);
+    letter-spacing: -0.02em;
+  }
+
+  .question-area::after {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 3px;
+    background: var(--accent);
+    margin-top: 28px;
+  }
+
+  /* ── Answer ── */
+  .answer-area {
+    flex: 1;
+  }
+
+  .answer-area .a-label {
+    font: 500 24px/1 var(--sans);
+    color: var(--accent);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .answer-content p {
+    font: 400 36px/1.8 var(--sans);
+    color: var(--text);
+    margin-bottom: 28px;
+  }
+
+  .answer-content .highlight {
+    font: 500 38px/1.65 var(--serif);
+    color: var(--text);
+    padding: 16px 0 16px 28px;
+    border-left: 3px solid var(--accent);
+    margin: 36px 0;
+  }
+
+  .answer-content h2 {
+    font: 600 42px/1.35 var(--serif);
+    color: var(--text);
+    margin: 40px 0 20px;
+  }
+
+  .answer-content ul {
+    list-style: none;
+    margin-bottom: 28px;
+  }
+
+  .answer-content ul li {
+    font: 400 36px/1.8 var(--sans);
+    color: var(--text);
+    padding: 6px 0 6px 32px;
+    position: relative;
+  }
+
+  .answer-content ul li::before {
+    content: '·';
+    position: absolute;
+    left: 4px;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  .answer-content strong {
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .answer-content .divider {
+    height: 1px;
+    background: var(--rule);
+    margin: 36px 0;
+  }
+
+  /* ── Watermark Footer ── */
+  .watermark {
+    flex-shrink: 0;
+    margin-top: 64px;
+    padding-top: 28px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .watermark .brand {
+    font: 500 28px/1 var(--sans);
+    color: var(--text-dim);
+    letter-spacing: 0.08em;
+  }
+
+  .watermark .date {
+    font: 400 24px/1 var(--sans);
+    color: var(--text-dim);
+    letter-spacing: 0.04em;
+  }
+
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="question-area">
+      <div class="q-label">Q</div>
+      <h1>{{QUESTION}}</h1>
+    </div>
+    <div class="answer-area">
+      <div class="a-label">A</div>
+      <div class="answer-content">
+        {{ANSWER_HTML}}
+      </div>
+    </div>
+    <div class="watermark">
+      <span class="brand">zzy</span>
+      <span class="date">{{DATE_STR}}</span>
+    </div>
+  </div>
+</body>
+</html>
