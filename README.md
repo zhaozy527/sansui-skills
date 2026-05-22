@@ -12,6 +12,7 @@ npx skills add sansui/sansui-skills -g --all
 
 # 安装单个技能
 npx skills add sansui/sansui-skills -g --skill pptx-to-md
+npx skills add sansui/sansui-skills -g --skill roundtable
 ```
 
 **参数说明：**
@@ -27,3 +28,4 @@ npx skills add sansui/sansui-skills -g --skill pptx-to-md
 | 技能 | 说明 |
 |------|------|
 | **pptx-to-md** | PPT/PPTX → 结构化 Markdown — 自动提取文字、表格、图表数据，嵌入截图，输出单文件 MD。适合 Obsidian 知识库、CEO 阅读、存档等场景 |
+| **roundtable** | 圆桌会议 — 多嘉宾深度辩证讨论，内置「思辨模式」与「经营模式」双引擎。支持5维人物蒸馏、综合者重构、ASCII框架图，逐轮深入直至产出可行动的结构化知识 |
