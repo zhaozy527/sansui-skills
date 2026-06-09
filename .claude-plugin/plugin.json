@@ -1,10 +1,10 @@
 {
   "name": "sansui-skills",
   "version": "0.1.0",
-  "description": "Sansui's personal Claude Code skills collection",
+  "description": "Claude Code skills collection — social cards, roundtable discussions, PPTX conversion, and NotebookLM infographics",
   "author": {
     "name": "sansui",
-    "url": "https://github.com/sansui"
+    "url": "https://github.com/zhaozy527"
   },
   "skills": "./skills"
 }

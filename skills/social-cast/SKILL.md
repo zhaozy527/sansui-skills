@@ -1,6 +1,6 @@
 ---
 name: social-cast
-description: "社交分享卡片。把内容做成带水印(zzy+日期)的图片，发朋友圈/公众号。触发词：做张图、做卡片、做个图、出图、发朋友圈、发出去、公众号、分享图。"
+description: "社交分享卡片。把内容做成带水印(用户名+日期)的图片，发朋友圈/公众号。触发词：做张图、做卡片、做个图、出图、发朋友圈、发出去、公众号、分享图。"
 user_invocable: true
 version: "1.0.0"
 ---
@@ -29,13 +29,14 @@ version: "1.0.0"
 
 ## 执行步骤
 
-### 步骤 1：获取日期
+### 步骤 1：获取日期和用户名
 
 ```bash
-date +%Y.%m.%d
+DATE_STR=$(date +%Y.%m.%d)
+USERNAME=$(whoami)
 ```
 
-记录为 `DATE_STR`。
+记录为 `DATE_STR` 和 `USERNAME`。
 
 ### 步骤 2：理解内容
 
@@ -75,8 +76,9 @@ date +%Y.%m.%d
 1. `{{BG_COLOR}}` → 背景色
 2. `{{ACCENT_COLOR}}` → 强调色
 3. `{{DATE_STR}}` → 日期字符串
-4. `{{HEADER}}` → 标题区域 HTML：`<div class="header"><h1>标题文字</h1></div>`
-5. `{{BODY_HTML}}` → 正文 HTML
+4. `{{USERNAME}}` → 用户名（取 `whoami` 结果，用户可自定义）
+5. `{{HEADER}}` → 标题区域 HTML：`<div class="header"><h1>标题文字</h1></div>`
+6. `{{BODY_HTML}}` → 正文 HTML
 
 正文 HTML 转换规则：
 - 用户内容中的标题 → `<h2>` 标签
@@ -94,8 +96,9 @@ date +%Y.%m.%d
 1. `{{BG_COLOR}}` → 背景色
 2. `{{ACCENT_COLOR}}` → 强调色
 3. `{{DATE_STR}}` → 日期字符串
-4. `{{MAIN_TEXT}}` → 核心金句（大字排版）
-5. `{{SUB_TEXT}}` → 补充说明（可选，留空则不显示）
+4. `{{USERNAME}}` → 用户名
+5. `{{MAIN_TEXT}}` → 核心金句（大字排版）
+6. `{{SUB_TEXT}}` → 补充说明（可选，留空则不显示）
 
 #### -q：问答卡片
 
@@ -105,8 +108,9 @@ date +%Y.%m.%d
 1. `{{BG_COLOR}}` → 背景色
 2. `{{ACCENT_COLOR}}` → 强调色
 3. `{{DATE_STR}}` → 日期字符串
-4. `{{QUESTION}}` → 问题文字
-5. `{{ANSWER_HTML}}` → 回答内容 HTML
+4. `{{USERNAME}}` → 用户名
+5. `{{QUESTION}}` → 问题文字
+6. `{{ANSWER_HTML}}` → 回答内容 HTML
 
 ### 步骤 5：截图
 
