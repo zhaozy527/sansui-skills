@@ -1,16 +1,4 @@
----
-layer: raw
-type: note
-created: {YYYY-MM-DD}
-updated: {YYYY-MM-DD}
-tags:
-  - 用研
-  - 深度访谈
-  - 访谈大纲
-source: "[[📄 资料室/深度访谈方法论.md]]"
-status: draft
----
-
+<!-- 产出文件可按你的笔记系统加 frontmatter；skill 不强制 schema -->
 # {调研主题} 访谈大纲
 
 ## 研究问题
