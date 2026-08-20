@@ -1,7 +1,7 @@
 {
   "name": "sansui-skills",
-  "version": "0.1.0",
-  "description": "Claude Code skills collection — social cards, roundtable discussions, PPTX conversion, and NotebookLM infographics",
+  "version": "0.2.0",
+  "description": "Claude Code skills collection — social cards, roundtable discussions, PPTX conversion, NotebookLM infographics, and depth-interview prep",
   "author": {
     "name": "sansui",
     "url": "https://github.com/zhaozy527"
